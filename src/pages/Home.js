@@ -12,7 +12,7 @@ function Home() {
         {/* Add your image here */}
         <img src={profilePic} alt="Profile" className="profile-pic" />
 
-        <h2>Hello. The Name is Thumbiko AKA Biko</h2>
+        <h2>Hello. The Name is Biko</h2>
 
         <div className="prompt">
           <p>A developer trying to be ExtraOrdinary and not just Ordinary.</p>
