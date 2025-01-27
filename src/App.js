@@ -23,6 +23,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/project/:id" element={<ProjectDisplay />} />
           
 
         </Routes>

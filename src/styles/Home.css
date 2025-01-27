@@ -2,7 +2,7 @@
     width: 100%;
     align-items: center;
     font-family: "Arial", sans-serif;
-    color: #68229e;
+    color: #763aba;
   }
   
   .about {
@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #4e169e;
+    background: #4e169e;
     color: #f0f0f0;
   }
   
@@ -99,3 +99,16 @@
     color: #3e497a;
     font-size: 30px;
   }
+
+
+
+  /* Home.css */
+
+.profile-pic {
+  display: block;       /* Makes the img behave like a block-level element */
+  margin: 0 auto;       /* Horizontally center in the parent container */
+  width: 150px;         /* Adjust as needed */
+  height: auto;         /* Maintain aspect ratio */
+  border-radius: 40%;   /* Optional: make it a circle if it's a profile pic */
+  margin-bottom: 1rem;  /* Add some space below the image */
+}
