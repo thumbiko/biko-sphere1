@@ -83,4 +83,19 @@
 
 
 
- 
+  .main_page {
+    width: 100%;
+    align-items: center;
+    font-family: "Arial", sans-serif;
+    color: #3e497a;
+    font-size: 30px;
+  }
+
+
+  .projects {
+    width: 100%;
+    align-items: center;
+    font-family: "Arial", sans-serif;
+    color: #3e497a;
+    font-size: 30px;
+  }
