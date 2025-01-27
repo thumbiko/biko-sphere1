@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ProjectList } from "../helpers/ProjectList";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import "../styles/ProjectDisplay.css";
+import someImage from '../assets/some-image-file.jpg';
 
 function ProjectDisplay() {
   const { id } = useParams();
