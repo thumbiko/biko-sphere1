@@ -1,0 +1,50 @@
+# Let's generate a text file with the instructions for deployment
+
+deployment_instructions = """
+Deployment Notes
+Project Name: [Biko Sphere]
+Deployment Date: [27/01/2025]
+Last Updated: [17/02/2025]
+
+1. Hosting & Domain Setup
+- Hosting Provider: Netlify
+- Domain Registrar: GoDaddy
+- Primary Domain: [bikosulu.eu]
+- Netlify Subdomain: [bikosphere.netlify.app]
+
+2. Steps for Deployment
+A. Uploading to Netlify
+1. Push your latest code changes to GitHub/GitLab/Bitbucket.
+2. Log in to https://www.netlify.com/ and navigate to your project.
+3. If it's a new project:
+    - Click "New site from Git."
+    - Connect your Git repository.
+    - Configure build settings (e.g., npm run build for React, gatsby build for Gatsby, etc.).
+    - Click "Deploy."
+4. For updates, just push to your repository, and Netlify will automatically rebuild and deploy.
+
+B. Connecting GoDaddy Domain to Netlify
+1. Log in to your GoDaddy account (https://www.godaddy.com/).
+2. Navigate to My Domains → Select your domain.
+3. Go to the DNS Settings and find the "Nameservers" section.
+4. Change the Nameservers to Custom and point them to Netlify’s:
+    - dns1.p07.nsone.net
+    - dns2.p07.nsone.net
+    - dns3.p07.nsone.net
+    - dns4.p07.nsone.net
+5. Save changes and wait for DNS propagation (may take a few hours).
+6. Go to Netlify → Domain settings → Add your custom domain ([yourdomain.com]).
+
+3. Deployment Configuration
+- Framework Used: [React]
+- Build Command: npm run build 
+- Publish Directory: /dist or /build (based on your framework)
+- Environment Variables:
+    - API_KEY=[your-api-key]
+    - NODE_ENV=production
+
+4. Troubleshooting & Maintenance
+- If changes don’t appear, clear cache (Ctrl + Shift + R or Cmd + Shift + R on Mac).
+- For domain issues, verify DNS settings on GoDaddy and Netlify.
+- Check Netlify deploy logs for errors.
+"""
