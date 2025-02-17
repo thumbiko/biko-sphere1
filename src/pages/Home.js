@@ -3,7 +3,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 //import GithubIcon from "@mui/icons-material/GitHub";
 import "../styles/Home.css";
-import profilePic from "../assets/profile.jpg";
+import profilePic from "../assets/profile1.jpg";
 
 function Home() {
   return (
