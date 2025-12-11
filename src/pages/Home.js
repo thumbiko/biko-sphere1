@@ -1,71 +1,105 @@
 import React from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
-//import GithubIcon from "@mui/icons-material/GitHub";
+import GithubIcon from "@mui/icons-material/GitHub";
 import "../styles/Home.css";
-import profilePic from "../assets/profile1.jpg";
+import profilePic from "../assets/profile.jpg";
 
 function Home() {
   return (
     <div className="home">
-      <div className="about">
-        {/* Add your image here */}
-        <img src={profilePic} alt="Profile" className="profile-pic" />
+      <section className="about">
+        <img src={profilePic} alt="Profile of Thumbiko" className="profile-pic" />
 
-        <h2>Hello. The Name is Biko</h2>
+        <h2>Hello. The Name is Thumbiko AKA Biko</h2>
 
         <div className="prompt">
-          <p>A developer trying to be ExtraOrdinary and not just Ordinary.</p>
+          <p>
+            Cybersecurity Analyst | Detection & Response | Cloud Security (AWS & Azure)  
+            Focused on SOC operations, threat detection, log analysis, and securing cloud environments.
+          </p>
 
-          {/* LinkedIn */}
-          <a 
-            href="https://www.linkedin.com/in/tivz/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <LinkedInIcon />
-          </a>
+          <div className="social-links">
+            <a
+              href="https://www.linkedin.com/in/tivz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
 
-          {/* Email */}
-          <a href="mailto:thumbikonyasulu@ymail.com">
-            <EmailIcon />
-          </a>
+            <a href="mailto:thumbikonyasulu@ymail.com" aria-label="Email">
+              <EmailIcon />
+            </a>
+
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <GithubIcon />
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="skills">
-        <h1> Skills</h1>
+      <section className="skills">
+        <h1>Skills</h1>
+
         <ol className="list">
+
+          {/* Cybersecurity & Cloud Security */}
           <li className="item">
-            <h2> Front-End</h2>
+            <h2>Cybersecurity & Cloud Security</h2>
             <span>
-              ReactJS, Angular, Redux, HTML, CSS, React Native, Flutter, NPM,
-              Ionic, BootStrap, MaterialUI, Yarn, TailwindCSS, StyledComponents
+              Threat Detection, SOC Monitoring, Incident Response, Log Analysis,
+              Vulnerability Management, Endpoint Hardening, Forensics,
+              MITRE ATT&CK, Network Traffic Analysis, Security Policies,
+              ISO27001 & GDPR Compliance
             </span>
           </li>
+
+          {/* Security Tools */}
           <li className="item">
-            <h2>Back-End</h2>
+            <h2>Security Tools</h2>
             <span>
-              NodeJS, ExpressJS, PostgreSQL, 
-              MySQL, MongoDB, 
+              Microsoft Sentinel, Splunk, IBM QRadar, Nessus, Nmap, Wireshark,
+              Metasploit, Kali Linux, IDS/IPS Fundamentals, Firewall Log Analysis,
+              Microsoft Defender, CrowdStrike (exposure)
             </span>
           </li>
+
+          {/* Cloud & DevOps */}
           <li className="item">
-            <h2>Languages</h2>
-            <span>JavaScript, Java, Python, C, </span>
-          </li>
-          <li className="item">
-            <h2>Web Development</h2>
-            <span>HTML, CSS, JavaScript, Bootstrap, jQuery</span>
-          </li>
-          <li className="item">
-            <h2>Security & Cryptography</h2>
+            <h2>Cloud & DevOps</h2>
             <span>
-              Proficiency in secure coding practices and cryptographic algorithms
+              AWS, Azure, VPN, IAM, MFA, CI/CD Basics, Linux Administration,
+              System Patching, API Integrations
             </span>
           </li>
+
+          {/* Programming & Automation */}
+          <li className="item">
+            <h2>Programming & Automation</h2>
+            <span>
+              Python, PowerShell, JavaScript, Java, C, KQL (Kusto Query Language)
+            </span>
+          </li>
+
+          {/* Full-Stack / Web Development */}
+          <li className="item">
+            <h2>Full-Stack / Web Development</h2>
+            <span>
+              ReactJS, Angular, Redux, React Native, Flutter, NodeJS, ExpressJS,
+              PostgreSQL, MySQL, MongoDB, HTML, CSS, Bootstrap, jQuery,
+              MaterialUI, TailwindCSS, StyledComponents, NPM, Yarn, Ionic
+            </span>
+          </li>
+
         </ol>
-      </div>
+      </section>
     </div>
   );
 }
