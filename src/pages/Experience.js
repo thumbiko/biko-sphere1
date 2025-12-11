@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Home.css";
+import "../styles/Experience.css";
 
 function Experience() {
   const openCv = () => {
@@ -12,16 +12,16 @@ function Experience() {
 
       <div style={{ margin: "20px 0" }}>
         <button onClick={openCv} style={styles.button}>
-          Open My CV in a different browser
+          Open My CV in a new tab
         </button>
       </div>
 
       <div className="cv-display">
-        <h2>View My CV below</h2>
         <embed
           src="/cv.pdf"
           width="100%"
           height="600px"
+          type="application/pdf"
         />
       </div>
     </div>
