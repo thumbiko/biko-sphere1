@@ -8,9 +8,9 @@ import profilePic from "../assets/profile.jpg";
 function Home() {
   return (
     <div className="home">
+      {/* About Section */}
       <section className="about">
         <img src={profilePic} alt="Profile of Thumbiko" className="profile-pic" />
-
         <h2>Hello. The Name is Thumbiko AKA Biko</h2>
 
         <div className="prompt">
@@ -45,11 +45,11 @@ function Home() {
         </div>
       </section>
 
+      {/* Skills Section */}
       <section className="skills">
         <h1>Skills</h1>
 
-        <ol className="list">
-
+        <ul className="list">
           {/* Cybersecurity & Cloud Security */}
           <li className="item">
             <h2>Cybersecurity & Cloud Security</h2>
@@ -97,11 +97,11 @@ function Home() {
               MaterialUI, TailwindCSS, StyledComponents, NPM, Yarn, Ionic
             </span>
           </li>
-
-        </ol>
+        </ul>
       </section>
     </div>
   );
 }
 
+// Make sure the component is exported
 export default Home;
