@@ -2,8 +2,10 @@ import React from "react";
 import "../styles/Experience.css";
 
 function Experience() {
+  const cvPath = process.env.PUBLIC_URL + "/cv.pdf";
+
   const openCv = () => {
-    window.open("/cv.pdf", "_blank");
+    window.open(cvPath, "_blank");
   };
 
   return (
@@ -18,7 +20,7 @@ function Experience() {
 
       <div className="cv-display">
         <embed
-          src="/cv.pdf"
+          src={cvPath}
           width="100%"
           height="600px"
           type="application/pdf"
