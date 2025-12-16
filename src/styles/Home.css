@@ -1,44 +1,70 @@
-/* Home Page */
 .home {
   width: 100%;
-  align-items: center;
-  font-family: "Arial", sans-serif;
-  color: #f0f0f0; /* changed to light for contrast */
+  font-family: Arial, sans-serif;
+  color: #f0f0f0;
 }
 
-/* About Section */
 .about {
-  width: 100%;
-  height: calc(100vh - 100px);
+  width: 100%; /* still full width of page */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* center the container */
+  padding: 40px 0; /* optional spacing top/bottom */
+  background: #21325e;
+  color: #f0f0f0;
+}
+
+.about-container {
+  background-color: #21325e; /* same as section or can add slight shadow */
+  display: inline-block; /* shrink to fit content */
+  padding: 40px;
+  border-radius: 20px;
   text-align: center;
-  background: #21325e; /* swapped from purple to footer color */
-  color: #f0f0f0; /* ensures text remains readable */
+  max-width: 400px; /* fits roughly a quarter of screen */
 }
 
 .about h2 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 80px;
-  color: #e9d35b; /* keep gold color for contrast */
-  height: 50px;
+  font-size: 48px;
+  color: #e9d35b;
+  margin-top: 20px;
 }
 
-.about .prompt {
-  width: 40%;
-  font-size: 30px;
-  color: #f0f0f0; /* ensure text is visible */
+.prompt {
+  width: 50%;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
-.prompt svg {
-  font-size: 60px;
-  margin: 5px;
-  color: #f0f0f0; /* icons visible on dark background */
+.profile-pic {
+  width: 150px;
+  height: auto;
+  border-radius: 40%;
+  border: 2px solid #e9d35b;
 }
 
-/* Skills Section */
+/* Social Icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  gap: 20px; /* spacing between icons */
+}
+
+.social-icon {
+  color: #f0f0f0;
+  font-size: 32px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #e9d35b;
+}
+
+.skills-spacer {
+  height: 80px;
+}
+
 .skills {
   font-size: 35px;
   width: 100%;
@@ -49,11 +75,7 @@
 }
 
 .skills h1 {
-  color: #21325e; /* match headings with about section for cohesion */
-}
-
-.skills h1 {
-  color: #21325e; /* dark text to match cards */
+  color: #21325e;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 42px;
   font-weight: 700;
@@ -61,97 +83,29 @@
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 40px;
-  position: relative;
-  border-bottom: 3px solid #e9d35b; /* subtle underline for emphasis */
+  border-bottom: 3px solid #e9d35b;
   padding-bottom: 10px;
 }
 
-
-
-
 .skills .list {
-  list-style: none; /* removes numbers */
-  color: #21325e;
-  width: 60%;
-}
-
-.list span {
-  font-size: 20px;
-  color: #21325e; /* make skill text readable on dark background */
-}
-
-/* Profile Picture */
-.profile-pic {
-  display: block;
-  margin: 0 auto;
-  width: 150px;
-  height: auto;
-  border-radius: 40%;
-  margin-bottom: 1rem;
-  border: 2px solid #e9d35b; /* optional: add border to make it pop on dark background */
-}
-
-/* Responsive */
-@media only screen and (max-width: 600px) {
-  .about h2 {
-    font-size: 40px;
-  }
-
-  .about .prompt {
-    margin-top: 10px;
-    font-size: 20px;
-    width: 80%;
-  }
-
-  .skills {
-    text-align: center;
-  }
-
-  .list {
-    padding: 0;
-  }
-
-  .skills h2 {
-    font-size: 30px;
-  }
-}
-
-
-
-
-/*SKILLS CSS*/
-
-
-.skills .list {
-  list-style: none; /* removes numbers */
+  list-style: none;
   width: 60%;
   padding: 0;
 }
 
 .skills .list .item {
-  background-color: #f0f0f0; /* light card background */
-  color: #21325e; /* dark text inside cards */
-  margin-bottom: 20px; /* spacing between cards */
-  padding: 20px 25px; /* inner spacing */
-  border-radius: 12px; /* rounded corners */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  line-height: 1.6;
+  background-color: #f0f0f0;
+  color: #21325e;
+  margin-bottom: 20px;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional hover effect */
-.skills .list .item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Headings inside cards */
 .skills .list .item h2 {
   margin-bottom: 8px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Text inside cards */
 .skills .list .item span {
   font-size: 16px;
   color: #21325e;
@@ -159,24 +113,17 @@
 
 /* Responsive */
 @media only screen and (max-width: 768px) {
+  .prompt {
+    width: 80%;
+    font-size: 16px;
+  }
   .skills .list {
     width: 100%;
   }
-
   .skills .list .item h2 {
     font-size: 18px;
   }
-
   .skills .list .item span {
     font-size: 14px;
   }
 }
-
-
-
-
-
-
-
-
-

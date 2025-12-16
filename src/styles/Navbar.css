@@ -1,165 +1,116 @@
-/* Base navbar styles */
+/* ---------------- Base Navbar ---------------- */
 .navbar {
   width: 100%;
   height: 100px;
-  background: #21325e; /* Changed from #4e169e to match footer */
+  background: #21325e; /* Matches footer color */
   font-family: "Arial", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative; /* To position the logo */
+  padding: 0 20px;
+  position: relative; /* for absolute positioning of mobile links */
+  z-index: 1000;
 }
 
-
-
-
-/* Links styles */
-.links {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  margin: 20px;
-  font-size: 25px;
-  position: relative;  /* Needed for the ::after pseudo-element */
-  transition: color 0.3s ease;
-}
-
-/* Hover Effect - Underline */
-.navbar a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #f39c12;  /* Underline color */
-  transition: width 0.3s ease;
-}
-
-.navbar a:hover::after {
-  width: 100%;  /* Full width underline on hover */
-}
-
-/* Toggle Button for Mobile */
-.toggleButton {
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.toggleButton svg {
-  font-size: 50px;
-}
-
-.toggleButton button {
-  margin-right: 20px;
-  background-color: transparent;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-#open {
-  height: 100vh;
-}
-
-#open .links {
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 100px;
-}
-
-#open a {
-  width: 100%;
-  text-align: center;
-}
-
-@media only screen and (max-width: 900px) {
-  .navbar a {
-    width: 70px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .toggleButton {
-    display: flex;
-  }
-  #close a {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .toggleButton {
-    display: none;
-  }
-
-  .hiddenLinks {
-    display: none;
-  }
-
-  #open {
-    height: 100px;
-  }
-
-  #open .links {
-    flex-direction: row;
-  }
-}
-
-/* Mobile Navbar - display the logo and adjust layout */
-@media (max-width: 768px) {
-  .toggleButton {
-    display: block;
-  }
-
-  .links a {
-    padding: 15px;
-    display: block;
-    border-top: 1px solid #ccc;
-  }
-}
-
-
-
-.navbar .logo img {
-  height: 40px; /* Adjust the height of the logo */
-  width: auto;  /* Maintain aspect ratio */
-}
-
-/* Logo scaling styles */
-/* Logo styles */
+/* ---------------- Logo ---------------- */
 .navbar .logo {
   display: flex;
   align-items: center;
-  margin-left: 20px;
 }
 
 .navbar .logo img {
-  height: 60px; 
+  height: 60px;
   width: auto;
   transition: height 0.3s ease;
 }
 
-/* Responsive logo scaling */
+/* ---------------- Links ---------------- */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition: max-height 0.3s ease;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+}
+
+/* Hover underline */
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #f39c12;
+  transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+/* ---------------- Hamburger Toggle Button ---------------- */
+.toggleButton button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 36px;
+  display: none; /* Hidden on desktop */
+}
+
+/* ---------------- Mobile Styles ---------------- */
 @media (max-width: 768px) {
+  /* Show hamburger */
+  .toggleButton button {
+    display: block;
+  }
+
+  /* Mobile menu */
+  .links {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    background: #21325e;
+    transition: max-height 0.3s ease;
+    z-index: 10;
+  }
+
+  /* Menu open */
+  .links.active {
+    max-height: 300px; /* Adjust based on number of links */
+  }
+
+  /* Mobile link styles */
+  .links a {
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    font-size: 22px;
+  }
+}
+
+/* ---------------- Responsive Logo Scaling ---------------- */
+@media (max-width: 480px) {
   .navbar .logo img {
     height: 45px;
   }
 }
 
-@media (max-width: 480px) {
-  .navbar .logo img {
-    height: 35px;
+/* ---------------- Optional Enhancements ---------------- */
+/* Add slight hover effect for mobile links */
+@media (max-width: 768px) {
+  .links a:hover {
+    background-color: rgba(243, 156, 18, 0.2);
   }
 }

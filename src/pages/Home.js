@@ -10,47 +10,60 @@ function Home() {
     <div className="home">
       {/* About Section */}
       <section className="about">
-        <img src={profilePic} alt="Profile of Thumbiko" className="profile-pic" />
-        <h2>Hello. The Name is Thumbiko AKA Biko</h2>
+  <div className="about-container">
+    <img
+      src={profilePic}
+      alt="Profile of Biko"
+      className="profile-pic"
+    />
 
-        <div className="prompt">
-          <p>
-            Cybersecurity Analyst | Detection & Response | Cloud Security (AWS & Azure)  
-            Focused on SOC operations, threat detection, log analysis, and securing cloud environments.
-          </p>
+    <h2>Hello. The Name is Biko</h2>
 
-          <div className="social-links">
-            <a
-              href="https://www.linkedin.com/in/tivz/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon />
-            </a>
+    <div className="prompt">
+      <p>
+        Cybersecurity Analyst | Detection & Response | Cloud Security (AWS &
+        Azure)
+        <br />
+        Focused on SOC operations, threat detection, log analysis, and
+        securing cloud environments.
+      </p>
 
-            <a href="mailto:thumbikonyasulu@ymail.com" aria-label="Email">
-              <EmailIcon />
-            </a>
+      <div className="social-links">
+        <a
+          href="https://www.linkedin.com/in/tivz/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <LinkedInIcon className="social-icon" />
+        </a>
 
-            <a
-              href="https://github.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <GithubIcon />
-            </a>
-          </div>
-        </div>
-      </section>
+        <a href="mailto:thumbikonyasulu@ymail.com" aria-label="Email">
+          <EmailIcon className="social-icon" />
+        </a>
+
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <GithubIcon className="social-icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      {/* Spacer */}
+      <div className="skills-spacer"></div>
 
       {/* Skills Section */}
       <section className="skills">
         <h1>Skills</h1>
 
         <ul className="list">
-          {/* Cybersecurity & Cloud Security */}
           <li className="item">
             <h2>Cybersecurity & Cloud Security</h2>
             <span>
@@ -61,7 +74,6 @@ function Home() {
             </span>
           </li>
 
-          {/* Security Tools */}
           <li className="item">
             <h2>Security Tools</h2>
             <span>
@@ -71,7 +83,6 @@ function Home() {
             </span>
           </li>
 
-          {/* Cloud & DevOps */}
           <li className="item">
             <h2>Cloud & DevOps</h2>
             <span>
@@ -80,7 +91,6 @@ function Home() {
             </span>
           </li>
 
-          {/* Programming & Automation */}
           <li className="item">
             <h2>Programming & Automation</h2>
             <span>
@@ -88,7 +98,6 @@ function Home() {
             </span>
           </li>
 
-          {/* Full-Stack / Web Development */}
           <li className="item">
             <h2>Full-Stack / Web Development</h2>
             <span>
@@ -103,5 +112,4 @@ function Home() {
   );
 }
 
-// Make sure the component is exported
 export default Home;
