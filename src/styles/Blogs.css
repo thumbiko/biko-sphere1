@@ -75,6 +75,7 @@
   padding: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   background-color: #f0f0f0;
+  text-align: left;
 }
 
 .blog-card-front {
@@ -82,9 +83,27 @@
 }
 
 .blog-card-back {
-  text-align: left;
+ text-align: left;
   transform: rotateY(180deg);
+  background-color: #21325e; /* back color */
+  color: #f0f0f0; /* text color for contrast */
+
 }
+
+/* Optional: smooth color transition */
+.blog-card-front,
+.blog-card-back {
+  transition: transform 0.8s, background-color 0.8s;
+}
+
+
+/* Tooltip color adjustment on back */
+.blog-card-back .tooltip {
+  background-color: #f0f0f0;
+  color: #21325e;
+}
+
+
 
 /* Remove heading on back */
 .blog-card-back h2 {
