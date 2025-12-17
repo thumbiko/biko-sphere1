@@ -1,69 +1,88 @@
 .experience-page {
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  justify-content: flex-start; /* align content to top */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   color: #21325e;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .experience-content {
-  width: 100%;
-  max-width: 1000px;
-  margin: 140px auto 50px; /* pushes content below navbar */
+  max-width: 1100px;
+  margin: 140px auto 60px;
   padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .experience-content h1 {
   font-size: 42px;
   font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
   text-align: center;
-  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 60px;
   border-bottom: 3px solid #e9d35b;
   padding-bottom: 10px;
 }
 
-.experience-content .cv-display {
-  width: 100%;
-  max-width: 1000px;
-  height: 600px;
-  margin-bottom: 50px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-radius: 12px;
-  overflow: hidden;
+/* Timeline overrides */
+.experience-timeline {
+  padding: 0;
 }
 
-.experience-content .cv-display embed {
-  width: 100%;
-  height: 100%;
-  border: none;
+/* Date column */
+.timeline-date {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Timeline card */
+.timeline-card {
+  background: #ffffff;
+  padding: 20px 25px;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-card h3 {
+  margin: 0 0 5px;
+  font-size: 20px;
+  color: #21325e;
+}
+
+.timeline-card h4 {
+  margin: 0 0 15px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #4e169e;
+}
+
+.timeline-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.timeline-card li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
 /* Responsive */
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .experience-content h1 {
     font-size: 32px;
-    padding-bottom: 8px;
   }
 
-  .experience-content .cv-display {
-    height: 400px;
+  .timeline-card {
+    padding: 18px;
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .experience-content h1 {
-    font-size: 28px;
+@media (max-width: 480px) {
+  .experience-content {
+    margin-top: 120px;
   }
 
-  .experience-content .cv-display {
-    height: 300px;
+  .experience-content h1 {
+    font-size: 28px;
   }
 }
