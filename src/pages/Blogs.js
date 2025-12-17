@@ -5,43 +5,30 @@ const blogPosts = [
   {
     id: 1,
     title: "Cybersecurity Fundamentals",
-    summary:
-      "Key concepts every security professional should understand.",
+    summary: "Core security principles every analyst should know.",
     content: (
-      <>
-        <h3>Top Cloud Security Principles</h3>
-        <p>
-          Strong cloud security starts with visibility and control. Enable
-          comprehensive logging, apply the principle of least privilege,
-          protect instance metadata, and restrict public access to storage
-          and container registries.
-        </p>
-        <p>
-          These foundational practices significantly reduce attack surface
-          and limit the impact of potential compromises.
-        </p>
-      </>
+      <ul className="blog-bullets">
+        <li>Enable centralized logging for all cloud services</li>
+        <li>Apply the principle of least privilege to IAM roles</li>
+        <li>Monitor logs for indicators of compromise</li>
+        <li>Protect credentials using MFA and strong policies</li>
+        <li>Regularly review access permissions</li>
+      </ul>
     ),
     date: "2025-12-17T14:30:00Z",
   },
   {
     id: 2,
     title: "Cloud Security Tips (AWS)",
-    summary:
-      "Practical security guidance for AWS cloud environments.",
+    summary: "Practical security guidance for AWS environments.",
     content: (
-      <>
-        <h3>AWS Top 5 Security Tips</h3>
-        <p>
-          Secure AWS environments by enabling CloudTrail logging, enforcing
-          least privilege IAM roles, using IMDSv2, blocking public S3 access,
-          and keeping ECR container images private.
-        </p>
-        <p>
-          Combined with MFA and strong password policies, these measures
-          help prevent common cloud security breaches.
-        </p>
-      </>
+      <ul className="blog-bullets">
+        <li>Enable AWS CloudTrail and CloudWatch logging</li>
+        <li>Use least-privilege IAM roles and policies</li>
+        <li>Enforce IMDSv2 on all EC2 instances</li>
+        <li>Block public access to S3 buckets</li>
+        <li>Keep ECR container images private</li>
+      </ul>
     ),
     date: "2025-12-17T15:00:00Z",
   },
