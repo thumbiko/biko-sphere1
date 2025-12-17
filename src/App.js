@@ -9,6 +9,7 @@ import WhoAmI from './pages/WhoAmI'
 import Navbar from './components/Navbar'
 import Footer from "./components/Footer";
 import ProjectDisplay from "./pages/ProjectDisplay";
+import Blogs from './pages/Blogs';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/project/:id" element={<ProjectDisplay />} />
+          <Route path="/blogs" element={<Blogs />} />  {/* new route */}
           
 
         </Routes>
