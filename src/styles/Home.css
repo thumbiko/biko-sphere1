@@ -2,7 +2,10 @@
   width: 100%;
   font-family: Arial, sans-serif;
   color: #f0f0f0;
+   padding-top: 100px; /* matches navbar height */
 }
+
+
 
 .about {
   width: 100%; /* still full width of page */
@@ -29,12 +32,15 @@
   margin-top: 20px;
 }
 
-.prompt {
-  width: 50%;
-  font-size: 20px;
-  margin-top: 20px;
-}
 
+
+.prompt {
+  width: 90%;           /* take most of container width */
+  max-width: 350px;     /* optional: limit max width */
+  margin: 20px auto 0;  /* top margin 20px, auto left/right to center */
+  font-size: 18px;      /* slightly smaller on mobile-friendly base */
+  text-align: center;   /* center text inside div */
+}
 .profile-pic {
   width: 150px;
   height: auto;
