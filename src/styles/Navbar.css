@@ -1,119 +1,119 @@
-/* ---------------- Base Navbar ---------------- */
+:root {
+  --nav-bg: rgba(15, 23, 42, 0.8); /* Deep Space with transparency */
+  --primary-gold: #e9d35b;
+  --cyber-blue: #38bdf8;
+}
+
 .navbar {
   width: 100%;
-  height: 100px;
-  background: #21325e;
-  font-family: "Arial", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* desktop: logo left, links right */
-  padding: 0 20px;
-  box-sizing: border-box;
-  position: fixed; /* sticky */
+  height: 80px;
+  position: fixed; /* Keeps it locked at the top */
   top: 0;
   left: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background: var(--nav-bg);
+  backdrop-filter: blur(15px); /* Modern Glass Effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-/* ---------------- Logo ---------------- */
-.navbar .logo {
+.navbar-container {
+  width: 90%;
+  max-width: 1200px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.navbar .logo img {
-  height: 60px;
-  width: auto;
-  transition: height 0.3s ease;
+/* Logo Styling */
+.nav-logo {
+  height: 45px;
+  filter: drop-shadow(0 0 5px rgba(56, 189, 248, 0.3));
+  transition: 0.3s;
 }
 
-/* ---------------- Links ---------------- */
-.links {
+.nav-logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px var(--primary-gold));
+}
+
+/* Links Layout */
+.navbar .links {
   display: flex;
-  align-items: center;
-  gap: 25px;
+  gap: 30px;
 }
 
-.links a {
-  color: white;
+.navbar .links a {
   text-decoration: none;
-  font-size: 20px;
+  color: #94a3b8;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900; /* BOLD */
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s;
   position: relative;
+  padding: 10px 0;
 }
 
-.links a::after {
-  content: '';
+/* The "01_" prefix styling */
+.navbar .links a span {
+  color: var(--cyber-blue);
+  font-family: 'Courier New', Courier, monospace;
+  margin-right: 5px;
+}
+
+/* Active & Hover States */
+.navbar .links a:hover, 
+.navbar .links a.active {
+  color: #fff;
+}
+
+.navbar .links a.active::after {
+  content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #f39c12;
-  transition: width 0.3s ease;
-}
-
-.links a:hover::after {
   width: 100%;
+  height: 3px;
+  background: var(--primary-gold);
+  box-shadow: 0 0 10px var(--primary-gold);
 }
 
-/* ---------------- Hamburger Button ---------------- */
+/* Mobile Toggle */
 .toggleButton {
-  display: none; /* desktop hidden */
+  display: none;
 }
 
 .toggleButton button {
   background: transparent;
   border: none;
-  color: white;
+  color: #fff;
   cursor: pointer;
-  font-size: 36px;
 }
 
-/* ---------------- Mobile Styles ---------------- */
-@media (max-width: 768px) {
-  /* Show hamburger */
+/* Mobile View */
+@media (max-width: 850px) {
   .toggleButton {
-    display: block;
-    position: absolute;
-    top: 30px;
-    right: 20px;
+    display: flex;
   }
 
-  /* Mobile menu links */
-  .links {
+  .navbar .links {
+    display: none; /* Hide on mobile by default */
+    flex-direction: column;
     position: absolute;
-    top: 100px; /* below navbar */
+    top: 80px;
     left: 0;
     width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    flex-direction: column;
-    background: #21325e;
-    transition: max-height 0.3s ease;
-    z-index: 1001;
+    background: #0f172a;
+    padding: 20px 0;
+    align-items: center;
+    border-bottom: 2px solid var(--primary-gold);
   }
 
-  .links.active {
-    max-height: 500px; /* or 'none' for dynamic height */
-    overflow: visible;
-  }
-
-  .links a {
-    padding: 15px 0;
-    text-align: center;
-    width: 100%;
-    font-size: 22px;
-  }
-
-  .links a:hover {
-    background-color: rgba(243, 156, 18, 0.2);
-  }
-}
-
-/* ---------------- Responsive Logo Scaling ---------------- */
-@media (max-width: 480px) {
-  .navbar .logo img {
-    height: 45px;
+  .navbar .links.open {
+    display: flex;
   }
 }

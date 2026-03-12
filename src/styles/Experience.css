@@ -1,88 +1,151 @@
+:root {
+  --primary-gold: #e9d35b;
+  --cyber-blue: #38bdf8;
+  --bg-dark: #0f172a;
+  --glass: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
 .experience-page {
   width: 100%;
   min-height: 100vh;
-  background-color: #f9f9f9;
-  color: #21325e;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-dark);
+  /* Added a subtle mesh gradient for 2026 depth */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(233, 211, 91, 0.05) 0px, transparent 50%);
+  padding: 120px 0;
+  color: #f0f0f0;
+  overflow-x: hidden;
 }
 
-.experience-content {
-  max-width: 1100px;
-  margin: 140px auto 60px;
-  padding: 0 20px;
-}
-
-.experience-content h1 {
-  font-size: 42px;
-  font-weight: 700;
+.section-title {
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 60px;
-  border-bottom: 3px solid #e9d35b;
-  padding-bottom: 10px;
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Fluid typography */
+  font-weight: 800;
+  margin-bottom: 80px;
+  background: linear-gradient(90deg, #fff 20%, var(--primary-gold) 50%, var(--cyber-blue) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
 }
 
-/* Timeline overrides */
+/* Enhancing the Timeline UI */
 .experience-timeline {
-  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto !important;
 }
 
-/* Date column */
-.timeline-date {
-  font-size: 14px;
-  color: #555;
+/* The "Circuit" Line */
+.MuiTimelineConnector-root {
+  background-color: var(--border) !important;
+  width: 2px !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
 }
 
-/* Timeline card */
-.timeline-card {
-  background: #ffffff;
-  padding: 20px 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--glass) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border) !important;
+  border-radius: 24px !important;
+  padding: 30px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: var(--cyber-blue) !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+}
+
+/* Typography Inside Cards */
 .timeline-card h3 {
-  margin: 0 0 5px;
-  font-size: 20px;
-  color: #21325e;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
 .timeline-card h4 {
-  margin: 0 0 15px;
-  font-size: 15px;
+  color: var(--primary-gold);
   font-weight: 500;
-  color: #4e169e;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
 }
 
 .timeline-card ul {
-  padding-left: 18px;
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
 .timeline-card li {
-  font-size: 14px;
-  margin-bottom: 8px;
-  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-/* Responsive */
+/* Custom bullet for security vibe */
+.timeline-card li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--cyber-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.timeline-date {
+  font-weight: 800 !important;
+  color: #64748b !important;
+  font-family: 'Inter', sans-serif !important;
+  text-transform: uppercase;
+  font-size: 0.9rem !important;
+  margin-top: 25px !important;
+}
+
+/* Interactive Dots */
+.MuiTimelineDot-root {
+  border: 2px solid var(--bg-dark) !important;
+  padding: 10px !important;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.dot-active {
+  background-color: var(--primary-gold) !important;
+  box-shadow: 0 0 20px rgba(233, 211, 91, 0.4) !important;
+}
+
+/* Mobile Fixes */
 @media (max-width: 768px) {
-  .experience-content h1 {
-    font-size: 32px;
+  .experience-timeline {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
-
-  .timeline-card {
-    padding: 18px;
+  
+  /* Force timeline to one side on mobile for better readability */
+  .MuiTimelineItem-root::before {
+    display: none !important;
   }
-}
-
-@media (max-width: 480px) {
-  .experience-content {
-    margin-top: 120px;
+  
+  .MuiTimeline-positionAlternate .MuiTimelineItem-root {
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
-
-  .experience-content h1 {
-    font-size: 28px;
+  
+  .timeline-date {
+    text-align: left !important;
+    margin-bottom: 10px !important;
   }
 }

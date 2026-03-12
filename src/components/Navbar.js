@@ -9,29 +9,32 @@ function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    setExpandNavbar(false); // Close navbar when route changes
+    setExpandNavbar(false); 
   }, [location]);
 
   return (
-    <nav className="navbar">
-      {/* Logo on the left */}
-      <div className="logo">
-        <img src={Logo} alt="Logo" />
-      </div>
+    <nav className={`navbar ${expandNavbar ? "expanded" : ""}`}>
+      <div className="navbar-container">
+        <div className="logo-section">
+          <Link to="/">
+            <img src={Logo} alt="BS_LOGO" className="nav-logo" />
+          </Link>
+        </div>
 
-      {/* Hamburger button */}
-      <div className="toggleButton">
-        <button onClick={() => setExpandNavbar(prev => !prev)}>
-          <ReorderIcon />
-        </button>
-      </div>
+        <div className="nav-elements">
+          <div className="toggleButton">
+            <button onClick={() => setExpandNavbar(prev => !prev)}>
+              <ReorderIcon />
+            </button>
+          </div>
 
-      {/* Links */}
-      <div className={`links ${expandNavbar ? "active" : ""}`}>
-        <Link to="/">Home</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/experience">Experience</Link>
-        <Link to="/blogs">Blogs</Link>  {/* new link */}
+          <div className={`links ${expandNavbar ? "open" : ""}`}>
+            <Link to="/" className={location.pathname === "/" ? "active" : ""}>HOME</Link>
+            <Link to="/projects" className={location.pathname === "/projects" ? "active" : ""}>PROJECTS</Link>
+            <Link to="/experience" className={location.pathname === "/experience" ? "active" : ""}>EXPERIENCE</Link>
+            <Link to="/blogs" className={location.pathname === "/blogs" ? "active" : ""}>BLOGS</Link>
+          </div>
+        </div>
       </div>
     </nav>
   );

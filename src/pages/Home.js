@@ -2,111 +2,86 @@ import React from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import GithubIcon from "@mui/icons-material/GitHub";
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import "../styles/Home.css";
 import profilePic from "../assets/profile.jpg";
 
 function Home() {
   return (
     <div className="home">
-      {/* About Section */}
+      {/* --- HERO / ABOUT SECTION --- */}
       <section className="about">
-  <div className="about-container">
-    <img
-      src={profilePic}
-      alt="Profile of Biko"
-      className="profile-pic"
-    />
+        <div className="glass-card about-container">
+          <div className="profile-wrapper">
+            <img src={profilePic} alt="Biko" className="profile-pic" />
+          </div>
 
-    <h2>Hello. The Name is Biko</h2>
+          <h2>BIKO <span>.</span></h2>
+          <div className="prompt">
+            <p className="hero-subtitle">
+              Offensive Security Enthusiast & Defensive Strategist
+            </p>
+            <div className="cert-badges">
+              <span className="badge">CompTIA PenTest+</span>
+              <span className="badge">CompTIA CySA+</span>
+            </div>
+            <p className="hero-description">
+              Bridging the gap between <strong>Threat Detection</strong> and <strong>Ethical Hacking</strong>. 
+              Specializing in exploit research, network pivoting, and cloud-native security response.
+            </p>
 
-    <div className="prompt">
-      <p>
-        Cybersecurity Analyst | Detection & Response | Cloud Security (AWS &
-        Azure)
-        <br />
-        Focused on SOC operations, threat detection, log analysis, and
-        securing cloud environments.
-      </p>
+            <div className="social-links">
+              <a href="https://www.linkedin.com/in/tivz/" target="_blank" rel="noopener noreferrer">
+                <LinkedInIcon className="social-icon" />
+              </a>
+              <a href="mailto:thumbikonyasulu@ymail.com">
+                <EmailIcon className="social-icon" />
+              </a>
+              <a href="https://github.com/">
+                <GithubIcon className="social-icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div className="social-links">
-        <a
-          href="https://www.linkedin.com/in/tivz/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          <LinkedInIcon className="social-icon" />
-        </a>
-
-        <a href="mailto:thumbikonyasulu@ymail.com" aria-label="Email">
-          <EmailIcon className="social-icon" />
-        </a>
-
-        <a
-          href="https://github.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-        >
-          <GithubIcon className="social-icon" />
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-      {/* Spacer */}
-      <div className="skills-spacer"></div>
-
-      {/* Skills Section */}
+      {/* --- SKILLS SECTION (MATCHING DESIGN) --- */}
       <section className="skills">
-        <h1>Skills</h1>
+        <div className="glass-card skills-container">
+          <h1 className="section-title">Technical <span>Arsenal</span></h1>
+          
+          <div className="skills-grid">
+            <div className="skill-card">
+              <h3><VerifiedUserIcon className="skill-icon" /> Ethical Hacking</h3>
+              <p>Red Teaming, Metasploit, OSINT, Active Recon, Privilege Escalation, and Lateral Movement (Pivoting).</p>
+            </div>
 
-        <ul className="list">
-          <li className="item">
-            <h2>Cybersecurity & Cloud Security</h2>
-            <span>
-              Threat Detection, SOC Monitoring, Incident Response, Log Analysis,
-              Vulnerability Management, Endpoint Hardening, Forensics,
-              MITRE ATT&CK, Network Traffic Analysis, Security Policies,
-              ISO27001 & GDPR Compliance
-            </span>
-          </li>
+            <div className="skill-card">
+              <h3><VerifiedUserIcon className="skill-icon" /> Security Ops</h3>
+              <p>Threat Hunting, Incident Response, SIEM Analysis, Microsoft Sentinel, Splunk, and MITRE ATT&CK.</p>
+            </div>
 
-          <li className="item">
-            <h2>Security Tools</h2>
-            <span>
-              Microsoft Sentinel, Splunk, IBM QRadar, Nessus, Nmap, Wireshark,
-              Metasploit, Kali Linux, IDS/IPS Fundamentals, Firewall Log Analysis,
-              Microsoft Defender, CrowdStrike (exposure)
-            </span>
-          </li>
+            <div className="skill-card">
+              <h3><VerifiedUserIcon className="skill-icon" /> Network Security</h3>
+              <p>Packet Analysis (Wireshark), WPA3/5G Vulnerabilities, Firewall Evasion, and Zero Trust Architecture.</p>
+            </div>
 
-          <li className="item">
-            <h2>Cloud & DevOps</h2>
-            <span>
-              AWS, Azure, VPN, IAM, MFA, CI/CD Basics, Linux Administration,
-              System Patching, API Integrations
-            </span>
-          </li>
+            <div className="skill-card">
+              <h3><VerifiedUserIcon className="skill-icon" /> Web & Cloud</h3>
+              <p>OWASP Top 10, SQLi, XSS, SSRF, AWS/Azure Auditing, and Identity Access Management (IAM) Hardening.</p>
+            </div>
 
-          <li className="item">
-            <h2>Programming & Automation</h2>
-            <span>
-              Python, PowerShell, JavaScript, Java, C, KQL (Kusto Query Language)
-            </span>
-          </li>
+            <div className="skill-card">
+              <h3><VerifiedUserIcon className="skill-icon" /> Automation</h3>
+              <p>Python (Exploit Dev), PowerShell Scripting, KQL (Kusto), Bash, and Secure Code Review.</p>
+            </div>
 
-          <li className="item">
-            <h2>Full-Stack / Web Development</h2>
-            <span>
-              ReactJS, Angular, Redux, React Native, Flutter, NodeJS, ExpressJS,
-              PostgreSQL, MySQL, MongoDB, HTML, CSS, Bootstrap, jQuery,
-              MaterialUI, TailwindCSS, StyledComponents, NPM, Yarn, Ionic
-            </span>
-          </li>
-        </ul>
+            <div className="skill-card">
+              <h3><VerifiedUserIcon className="skill-icon" /> Cryptography</h3>
+              <p>Hashing Algorithms, MFA Bypass, Kerberos/NTLM Exploits, and PKI Infrastructure management.</p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -4,33 +4,45 @@ import "../styles/Blogs.css";
 const blogPosts = [
   {
     id: 1,
-    title: "Cybersecurity Fundamentals",
-    summary: "Core security principles every analyst should know.",
+    title: "ADVANCED NETWORK PIVOTING",
+    summary: "Post-exploitation strategies for traversing segmented enterprise environments.",
     content: (
       <ul className="blog-bullets">
-        <li>Enable centralized logging for all cloud services</li>
-        <li>Apply the principle of least privilege to IAM roles</li>
-        <li>Monitor logs for indicators of compromise</li>
-        <li>Protect credentials using MFA and strong policies</li>
-        <li>Regularly review access permissions</li>
+        <li>Establishing persistent SOCKS5 proxies</li>
+        <li>Dynamic port forwarding via SSH & Chisel</li>
+        <li>Lateral movement using Pass-the-Hash (PtH)</li>
+        <li>Routing through compromised dual-homed hosts</li>
       </ul>
     ),
-    date: "2025-12-17T14:30:00Z",
+    date: "2026-03-12T09:00:00Z",
   },
   {
     id: 2,
-    title: "Cloud Security Tips (AWS)",
-    summary: "Practical security guidance for AWS environments.",
+    title: "API EXPLOITATION & BOLA",
+    summary: "Breaking modern application logic via Broken Object Level Authorization.",
     content: (
       <ul className="blog-bullets">
-        <li>Enable AWS CloudTrail and CloudWatch logging</li>
-        <li>Use least-privilege IAM roles and policies</li>
-        <li>Enforce IMDSv2 on all EC2 instances</li>
-        <li>Block public access to S3 buckets</li>
-        <li>Keep ECR container images private</li>
+        <li>Enumerating IDOR vulnerabilities in RESTful APIs</li>
+        <li>JWT Manipulation and Secret Brute-forcing</li>
+        <li>Bypassing rate limits for credential stuffing</li>
+        <li>Mass Assignment and Data Over-posting attacks</li>
       </ul>
     ),
-    date: "2025-12-17T15:00:00Z",
+    date: "2026-02-15T12:00:00Z",
+  },
+  {
+    id: 3,
+    title: "THREAT HUNTING WITH KQL",
+    summary: "Detecting sophisticated adversaries using Microsoft Sentinel logic.",
+    content: (
+      <ul className="blog-bullets">
+        <li>Identifying anomalous PowerShell execution patterns</li>
+        <li>Monitoring for Living-off-the-Land (LotL) binaries</li>
+        <li>Correlating identity logs with endpoint telemetry</li>
+        <li>Building high-fidelity custom analytic rules</li>
+      </ul>
+    ),
+    date: "2026-01-10T15:30:00Z",
   },
 ];
 
@@ -42,44 +54,48 @@ function Blogs() {
   };
 
   return (
-    <div className="blogs">
-      <h1>Blogs</h1>
-      <p>Welcome to my technical blogs.</p>
+    <div className="blogs-page">
+      <div className="blogs-content">
+        <h1 className="section-title">SECURITY INTELLIGENCE</h1>
+        <p className="subtitle">Technical Research & Offensive Methodologies</p>
 
-      <div className="blog-list">
-        {blogPosts.map((blog) => {
-          const formattedDate = new Date(blog.date).toLocaleString("en-IE", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false,
-          });
+        <div className="blog-grid">
+          {blogPosts.map((blog) => {
+            const formattedDate = new Date(blog.date).toLocaleDateString("en-IE", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            });
 
-          return (
-            <div
-              className={`blog-card ${flipped[blog.id] ? "flipped" : ""}`}
-              key={blog.id}
-              onClick={() => toggleFlip(blog.id)}
-            >
-              <div className="tooltip">Click to flip</div>
+            return (
+              <div
+                className={`blog-card ${flipped[blog.id] ? "flipped" : ""}`}
+                key={blog.id}
+                onClick={() => toggleFlip(blog.id)}
+              >
+                <div className="blog-card-inner">
+                  {/* Front: Same Glass look as Experience */}
+                  <div className="blog-card-front glass-card">
+                    <div className="blog-header">
+                      <span className="blog-tag">REPORT_{blog.id}</span>
+                      <span className="blog-date">{formattedDate}</span>
+                    </div>
+                    <h2>{blog.title}</h2>
+                    <p>{blog.summary}</p>
+                    <div className="flip-hint">ACCESS_DATA »</div>
+                  </div>
 
-              <div className="blog-card-inner">
-                <div className="blog-card-front">
-                  <div className="blog-date">{formattedDate}</div>
-                  <h2>{blog.title}</h2>
-                  <p>{blog.summary}</p>
-                </div>
-
-                <div className="blog-card-back">
-                  <div className="blog-date">{formattedDate}</div>
-                  {blog.content}
+                  {/* Back: High Contrast Gold/Dark */}
+                  <div className="blog-card-back glass-card active-border">
+                    <h3 className="back-title">TECHNICAL_SPECS</h3>
+                    {blog.content}
+                    <div className="flip-hint">CLOSE_FILE «</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
