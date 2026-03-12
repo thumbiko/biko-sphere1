@@ -1,7 +1,6 @@
 # Biko-Sphere 🌐
 
-A high-performance, Brutalist-inspired portfolio showcasing full-stack deployments and technical expertise. Built with a "2026 Tech-Noir" aesthetic, focusing on clarity, bold typography, and glassmorphism.
-
+A high-performance, Brutalist-inspired portfolio showcasing full-stack deployments and technical expertise. 
 ---
 
 ## 🚀 Overview
