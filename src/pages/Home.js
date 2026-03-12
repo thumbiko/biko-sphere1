@@ -4,7 +4,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import GithubIcon from "@mui/icons-material/GitHub";
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import "../styles/Home.css";
-import profilePic from "../assets/profile4.jpeg";
+import profilePic from "../assets/profile.jpg";
 //import profilePic from "../assets/profile4.jpg";
 
 function Home() {
